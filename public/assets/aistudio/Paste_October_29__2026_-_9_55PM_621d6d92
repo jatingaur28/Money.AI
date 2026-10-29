@@ -1,0 +1,937 @@
+# MONEYSHIELD OS — ULTIMATE AI FINTECH BUILD PROMPT
+## AI PERSONAL FINANCE + AUTOPAY INTELLIGENCE + FRAUD PROTECTION + FINANCIAL AUTOMATION
+
+YOUR ROLE
+Act as an elite fintech product architect, senior full-stack developer, AI/ML engineer, cybersecurity specialist, Android/iOS engineer, UX designer, Indian fintech compliance researcher, QA engineer and SaaS business strategist.
+
+Build MONEYSHIELD OS, a premium, intelligent, security-first personal finance ecosystem for India. This must be a genuinely functional product, not merely a landing page, static dashboard or collection of mockups.
+
+IMPORTANT EXECUTION RULES
+1. Inspect the existing development environment and repository first.
+2. Start implementing immediately. Do not stop after producing a plan, architecture diagram or UI prototype.
+3. Make sensible decisions without repeatedly asking questions.
+4. Prioritise working end-to-end features, real database persistence, security, automated tests and polished design.
+5. Never fabricate transactions, bank connections, live prices, fraud intelligence, successful actions or test results.
+6. Mark demo data, forecasts, unconnected integrations and simulated functionality clearly.
+7. Use official documentation to verify current APIs, regulatory requirements, permissions and platform restrictions.
+8. Never expose secrets in frontend code or commit credentials.
+9. Every visible control must work, provide a meaningful explanation, or be disabled with a reason.
+10. If a capability requires approval or external credentials, build its integration interface and setup instructions while implementing a useful fallback.
+11. Build in phases, maintain a backlog of remaining features, and continue implementation rather than repeatedly requesting confirmation.
+12. Do not claim functionality is production-ready without appropriate testing and verification.
+
+==================================================
+1. PRODUCT VISION
+==================================================
+
+Product name: MONEYSHIELD OS
+Tagline: Protect Your Money. Master Your Finances.
+
+Create one intelligent platform that helps individuals, families, freelancers, salaried professionals and small businesses:
+
+- Understand where their money goes.
+- Track subscriptions, recurring payments and AutoPay mandates.
+- Identify possible scams before users take risky actions.
+- Discover avoidable expenses.
+- Manage budgets, debts, savings and financial goals.
+- Compare financial products using verified information.
+- Automate authorised financial-administration tasks.
+- Receive actionable insights through a conversational AI assistant.
+
+Core journey:
+CONNECT OR IMPORT → UNDERSTAND → DETECT → PROTECT → OPTIMISE → AUTHORISE ACTION → VERIFY RESULT.
+
+The platform must remain useful without bank connectivity, premium APIs or privileged device permissions.
+
+Primary market: India, using INR, Indian number formatting, UPI terminology, India-relevant financial workflows and English/Hindi initially. Architect the application for international expansion.
+
+==================================================
+2. PRODUCT SURFACES AND TECHNOLOGY
+==================================================
+
+Build:
+- Premium responsive website.
+- Authenticated web application.
+- Installable PWA where supported.
+- Android application.
+- iOS application.
+- Shared backend and reusable design system.
+- Secure administrative portal.
+- API and integration layer.
+
+Preferred stack, adapt where the existing environment requires:
+- Web: Next.js, React, TypeScript, Tailwind CSS and accessible reusable UI components.
+- Mobile: React Native with Expo and TypeScript; use native Kotlin/Swift modules where required and supported.
+- Backend: TypeScript services or server routes.
+- Database: PostgreSQL, preferably Supabase when appropriate.
+- Authentication: secure, supported authentication provider.
+- Validation: Zod or equivalent.
+- Forms: React Hook Form or equivalent.
+- Charts: accessible financial visualisation library.
+- Background work: scheduled jobs and queues where required.
+- Notifications: configurable email and push providers.
+- Monitoring: structured logging and error monitoring.
+- Testing: unit, integration, security and end-to-end tests.
+
+Keep financial calculations, fraud analysis, shared types and API contracts in reusable modules.
+
+Use database migrations, typed interfaces, environment-specific configuration, reproducible setup instructions and version-controlled configuration templates.
+
+Suggested structure:
+apps/web
+apps/mobile
+apps/admin
+packages/ui
+packages/types
+packages/finance-engine
+packages/fraud-engine
+packages/api-client
+packages/integrations
+database/migrations
+tests
+docs
+
+Do not introduce unnecessary infrastructure when a simpler architecture can safely support the MVP.
+
+==================================================
+3. PREMIUM USER EXPERIENCE
+==================================================
+
+Create a polished, trustworthy financial interface inspired by excellent banking, cybersecurity and enterprise SaaS products.
+
+Visual identity:
+- Deep navy and graphite.
+- Clean light theme and optional dark theme.
+- Teal/green for verified positive outcomes.
+- Amber for caution.
+- Red for urgent threats.
+- Clear typography, refined charts, generous spacing and subtle motion.
+- Mobile-first layouts and accessible controls.
+- Responsive desktop dashboards and detailed financial reports.
+
+Avoid generic AI gradients, excessive glass effects, clutter and fake financial figures.
+
+Navigation:
+Dashboard, Transactions, Subscriptions, AutoPay, Fraud Shield, Budgets, Savings Goals, Financial Products, AI Assistant, Reports and Settings.
+
+Mobile navigation:
+Home, Activity, Protect, Optimise and Profile.
+
+Provide global search, notification centre, onboarding, contextual help, loading states, useful empty states, retry controls and readable error messages.
+
+Support Indian locale formatting, accessible contrast, keyboard navigation, screen readers, reduced motion and appropriately sized mobile controls.
+
+==================================================
+4. AUTHENTICATION, ONBOARDING AND PRIVACY
+==================================================
+
+Implement:
+- Registration, login, verification and account recovery.
+- Supported OAuth or passwordless authentication where appropriate.
+- MFA where supported.
+- Secure sessions and logout.
+- Optional native biometric app unlock.
+- Device/session management.
+- Account export and deletion.
+- User consent history.
+- Notification, language and privacy settings.
+- Optional household and business workspaces.
+
+Onboarding should ask only for necessary information and allow users to skip bank linking.
+
+Support profile types:
+Student, salaried employee, freelancer, self-employed, household manager and small-business owner.
+
+Include a demo workspace populated only with visibly labelled synthetic data.
+
+Implement granular, revocable consent for individual data sources and processing purposes. Login or general terms acceptance must not be treated as blanket consent to access financial records, messages or documents.
+
+==================================================
+5. PERSONAL FINANCE DASHBOARD
+==================================================
+
+Display, when sufficient data exists:
+- Income and expenses.
+- Net cash flow and savings rate.
+- Category-wise spending.
+- Remaining budget.
+- Upcoming bills and recurring payments.
+- Subscription renewals.
+- Debt and credit-card obligations.
+- Net worth, assets and liabilities.
+- Savings-goal progress.
+- Potential savings versus verified savings.
+- Unusual spending indicators.
+- Financial security alerts.
+- Monthly, quarterly and annual trends.
+- Historical comparisons.
+- Predicted cash-flow shortfalls, with uncertainty disclosed.
+
+Create a projected cash-flow timeline and configurable dashboard widgets.
+
+Clearly distinguish actual, manually entered, imported, estimated and forecast amounts. Explain missing data and the effect it has on calculations. Never present incomplete information as a complete picture of the user's finances.
+
+==================================================
+6. TRANSACTIONS AND FINANCIAL DOCUMENTS
+==================================================
+
+Support:
+- Manual income and expense entry.
+- Editing, deleting, categorising and searching transactions.
+- Custom categories, tags, notes and split transactions.
+- Transfers between a user's own accounts.
+- CSV imports and supported statement uploads.
+- Export in CSV and other appropriate formats.
+- Duplicate detection and reconciliation.
+- Correction of automatically assigned categories.
+- Merchant normalisation and recurring-payment discovery.
+
+For imported files:
+1. Validate file type, size, schema and encoding.
+2. Reject unsafe or malformed content.
+3. Detect duplicate imports and transactions.
+4. Preview extracted rows.
+5. Let users correct mistakes before saving.
+6. Record import provenance.
+7. Support rollback of an import where feasible.
+
+For PDF/document extraction, display date, merchant, amount, currency and description for user approval. Preserve original documents only under an explicit retention policy.
+
+Never assume a recurring transaction is a subscription merely because merchant names or amounts look similar.
+
+==================================================
+7. SUBSCRIPTION INTELLIGENCE
+==================================================
+
+Build a central subscription manager.
+
+Each record should include provider, plan, category, cost, currency, billing interval, next payment date, renewal date, trial end date, payment-method label, usage notes, cancellation URL, instructions, source, last verification and status.
+
+Implement:
+- Subscription discovery from manual entry, imported transactions and authorised sources.
+- Upcoming-renewal and free-trial reminders.
+- Monthly and annual cost calculations.
+- Price-increase alerts.
+- Duplicate and overlapping-service detection.
+- Lower-tier, family-plan, student-plan and bundle comparisons.
+- Usage-aware recommendations.
+- Cancellation instructions and confirmation tracking.
+- Historical price tracking where reliable.
+- Monthly and annual reports.
+- Savings opportunities and verified savings ledger.
+
+Use a verified provider catalogue. Prices must include currency, billing period, region, relevant plan restrictions and last-checked date.
+
+Never invent current prices or assume overlapping services are unnecessary. Explain feature differences, switching costs and trade-offs.
+
+Cancellation status must reflect the evidence: not started, action required, submitted, pending, confirmed, failed or unverified.
+
+==================================================
+8. AUTOPAY AND MANDATE COMMAND CENTRE
+==================================================
+
+Create a consolidated view of:
+- UPI AutoPay mandates.
+- Card-based recurring billing.
+- Bank standing instructions.
+- Subscription payments.
+- Loan instalments.
+- Insurance premiums.
+- Household bills and other recurring obligations.
+
+Features:
+- Upcoming-debit calendar.
+- Seven-, fifteen- and thirty-day forecasts.
+- Upcoming debit notifications.
+- Amount-change alerts.
+- Newly discovered recurring-payment alerts where supported.
+- Duplicate-payment detection.
+- Trial-conversion alerts.
+- Failed-payment tracking where connected.
+- Expiring mandate notifications.
+- Mandate status and history.
+- Official management links.
+- Provider-specific cancellation instructions.
+- Revocation handoff and confirmation tracking.
+
+Support natural-language requests such as:
+"Show my upcoming AutoPay deductions."
+"Find subscriptions renewing this week."
+"Explain how to cancel my Spotify AutoPay."
+"Help me stop a recurring payment."
+
+Create a MandateIntegrationAdapter for properly authorised providers.
+
+Do not assume that an independent application can directly inspect or revoke all mandates. Do not request UPI PINs, bank passwords or OTPs. Never mark a mandate cancelled without reliable confirmation.
+
+Where direct revocation is unavailable, guide the user to the relevant official bank/payment application and track the result only to the extent it can be verified.
+
+==================================================
+9. ADVANCED AI FRAUD SHIELD
+==================================================
+
+Make fraud protection a flagship differentiator.
+
+Detect or assess:
+- Phishing SMS and emails.
+- Fake bank and KYC messages.
+- Account-blocking threats.
+- Fake refunds and delivery-fee scams.
+- UPI and QR-code scams.
+- Payment requests and credential theft.
+- Fake customer-support numbers.
+- Remote-access and screen-sharing scams.
+- Malicious APKs, downloads and suspicious attachments.
+- Brand and government impersonation.
+- Lookalike and Unicode-homograph domains.
+- Phishing websites and malicious redirects.
+- Shortened URLs and suspicious redirect chains.
+- Fake investment opportunities and guaranteed-return claims.
+- Job, task, romance and loan scams.
+- Business email compromise.
+- Deepfake-related impersonation and social-engineering risks.
+- Fake financial documents and regulatory impersonation.
+- Account-takeover indicators where authorised signals exist.
+
+USER-INITIATED CHECKS
+Allow users to:
+- Paste suspicious messages.
+- Share text or URLs into the app.
+- Submit suspicious emails.
+- Upload supported files.
+- Submit screenshots for opt-in OCR.
+- Analyse QR payloads without executing embedded actions.
+- Check supported phone numbers, domains, UPI IDs and other identifiers against legitimate sources.
+
+Use this hybrid detection pipeline:
+1. Deterministic rules.
+2. Safe URL normalisation and parsing.
+3. Domain and sender reputation.
+4. Trusted threat-intelligence providers.
+5. Pattern-based detection.
+6. AI message classification.
+7. Contextual risk assessment.
+8. Evidence-based explanations.
+9. Confidence calibration.
+10. User correction and feedback.
+11. Policy-based warnings.
+
+Consider impersonation, urgency, suspicious links, requested transfers, credential requests, software installation, domain mismatches, trusted-source verification and known malicious indicators.
+
+Check URL reputation and redirects using isolated services with strict SSRF protection, DNS/IP validation, redirect limits, timeouts, content-size limits, private-network blocking and safe caching. Never execute downloaded content.
+
+Each alert should include:
+- Threat category and severity.
+- Reasons for the warning.
+- Verified evidence and provenance.
+- Information the system could not verify.
+- Safe next steps.
+- Source timestamp and freshness where relevant.
+- False-positive reporting.
+
+Use categories such as informational, caution, suspicious, high risk and confirmed malicious. Reserve the last label for adequate authoritative evidence. Never present an uncalibrated fraud probability as fact.
+
+Protect against malicious crowd reports, brigading, impersonation and false accusations. A report count alone is not proof. Separate official intelligence, community reports and AI predictions.
+
+Use English and Hindi initially, with multilingual architecture for additional Indian languages.
+
+==================================================
+10. DEVICE-LEVEL AND PROACTIVE PROTECTION
+==================================================
+
+Implement capabilities in clearly separated levels:
+
+A. Manual scanning.
+B. User-initiated share-to-scan.
+C. Supported native filtering or device protections.
+D. Authorised partner threat signals.
+E. Properly authorised financial-institution risk integrations.
+
+Verify current Android and iOS capabilities, permission requirements and app-store policies before implementation.
+
+Do not secretly inspect notifications, messages or other apps. Do not access encrypted WhatsApp chats through unofficial APIs. Do not misuse accessibility permissions to control third-party applications. Do not claim universal link blocking, call blocking or withdrawal interception.
+
+If OS-wide protection is unavailable, make user-initiated scanning and safe in-app previews excellent.
+
+Where a dangerous action occurs within MoneyShield itself, provide a clear, contextual warning before proceeding.
+
+Provide appropriate opt-in permissions, local processing where practical, minimum data retention and transparent permission revocation.
+
+==================================================
+11. SCAM RESPONSE AND RECOVERY ASSISTANT
+==================================================
+
+Create an emergency workflow for suspected scam exposure or money loss.
+
+Provide:
+- Immediate steps to stop further interaction.
+- Warnings never to disclose OTPs, PINs or passwords.
+- Verified bank/payment-provider contact guidance.
+- Evidence-preservation checklists.
+- Incident timeline and secure notes.
+- Reporting instructions.
+- Incident-status tracking.
+- Relevant official Indian cybercrime reporting links.
+- Information about India's 1930 cybercrime helpline, with current official verification.
+- Exportable incident summaries.
+
+Never promise that funds will be recovered. Never submit reports or contact banks on a user's behalf without explicit authorisation and an appropriate supported workflow.
+
+Verify official URLs and contact details rather than hardcoding unverified numbers or links.
+
+==================================================
+12. FINANCIAL PLANNING AND CALCULATORS
+==================================================
+
+Build:
+- Monthly budgets and spending limits.
+- Emergency-fund planning.
+- Savings goals.
+- Income and expense forecasts.
+- Debt and loan tracking.
+- EMI calculations.
+- Credit-card payment reminders.
+- Net-worth tracking.
+- Insurance-renewal reminders.
+- Household finance.
+- Shared expenses.
+- Annual financial planning.
+- Financial habit tracking.
+- Financial document organisation.
+- Recurring expense forecasting.
+
+Calculators should include:
+- Compound interest.
+- Inflation-adjusted savings.
+- SIP illustrations.
+- Loan EMIs and amortisation.
+- Debt repayment strategies.
+- Emergency-fund goals.
+- Savings targets.
+- Subscription annualisation.
+- Credit-card interest illustrations.
+- Investment-fee comparisons.
+- Goal-based scenario modelling.
+
+Use deterministic, unit-tested financial calculations and decimal-safe money handling. Label projections as estimates, disclose assumptions and avoid promising returns.
+
+Provide affordability analysis and spending scenarios such as:
+"What if my rent increases by ₹5,000?"
+"How much could I save in twelve months?"
+"Can I afford this purchase without harming my goals?"
+
+These are educational calculations, not guarantees or automatically authorised financial advice.
+
+==================================================
+13. AI PERSONAL FINANCE COPILOT
+==================================================
+
+Create a conversational assistant that uses authenticated, authorised user data and safe application tools.
+
+Example commands:
+- "Where did my money go this month?"
+- "Explain why my expenses increased."
+- "Find subscriptions I should review."
+- "Show all upcoming recurring payments."
+- "Help me save ₹2,000 monthly."
+- "Create a budget for next month."
+- "Explain this transaction."
+- "Compare two verified financial products."
+- "How much interest will I pay?"
+- "Prepare my monthly financial report."
+- "Check whether this SMS looks suspicious."
+- "Help me cancel a subscription."
+- "Show my financial goals and progress."
+
+Implement tool calling with strict schemas, authorisation checks and per-tool permissions.
+
+Separate:
+- Read-only actions.
+- Reversible changes.
+- Consequential or external actions.
+
+Require explicit user confirmation before sensitive changes or external operations. Show an action preview, affected account/service, potential consequences and required permissions.
+
+Use idempotency keys, execution records, timeouts, safe retries, audit trails and post-action verification.
+
+Never let model-generated text directly execute arbitrary code, SQL, payments or privileged commands.
+
+The AI must admit when data is missing or an integration is disconnected. It must not invent transactions, prices, financial facts or successful actions.
+
+==================================================
+14. AGENTIC FINANCIAL WORKFLOWS
+==================================================
+
+Create an approval-based automation framework.
+
+Users may create workflows such as:
+- Remind me three days before every recurring debit.
+- Warn me if a subscription price increases.
+- Alert me if spending exceeds my budget.
+- Review upcoming bills against predicted cash flow.
+- Notify me when a trial is about to convert.
+- Generate a monthly financial summary.
+- Recheck subscriptions for lower-cost plans.
+- Remind me to follow up on cancellation requests.
+- Flag unusual transaction patterns when suitable data exists.
+
+Each workflow must have triggers, conditions, actions, permissions, execution history, failure handling, retry rules and a kill switch.
+
+Automations must not transfer money, trade securities, change account security settings or cancel financial mandates unless an explicitly authorised integration supports the operation and the user completes the required approval.
+
+Include workflow simulation, dry-run previews, notification controls and auditability.
+
+==================================================
+15. FINANCIAL PRODUCT DISCOVERY AND COMPARISON
+==================================================
+
+Create a source-backed directory for supported categories such as:
+- Bank accounts and fixed deposits.
+- Credit cards.
+- Stockbrokers.
+- Mutual-fund platforms.
+- Insurance and loans.
+- Budgeting and financial applications.
+- Investment education tools.
+
+For each product, show relevant provider details, eligibility, features, fees, terms, limitations, official sources, regulatory registration information where applicable, region and last verification date.
+
+Build filters, side-by-side comparisons and user-preference matching.
+
+Do not fabricate current rates, fees or eligibility rules. Build ingestion and review systems for changing data.
+
+Separate editorial recommendations, sponsored results and affiliate offers. Disclose commercial relationships and prevent commissions from silently controlling rankings.
+
+Never execute investments, insurance purchases or trades without the necessary authorisations and compliance framework. Do not impersonate a regulated adviser.
+
+==================================================
+16. SAVINGS OPTIMISATION ENGINE
+==================================================
+
+Identify opportunities involving:
+- Unused subscriptions.
+- Duplicate services.
+- Lower-cost plans.
+- Family or student plans.
+- Avoidable late fees.
+- Rising recurring charges.
+- Household bill optimisation.
+- Unused business software licences.
+- Duplicate AI tools and SaaS expenditure.
+- Potentially cheaper alternatives with acceptable trade-offs.
+
+Each opportunity must show current cost, proposed alternative, estimated gross benefit, switching costs, feature differences, assumptions, confidence, source, required action and verification status.
+
+Distinguish:
+Potential saving → Selected → Action started → Completed → Verified saving.
+
+Separate recurring savings from one-time savings. Count only evidence-backed, verified results as confirmed savings. Never claim that a recommended cancellation saved money before the cancellation and billing outcome are sufficiently verified.
+
+==================================================
+17. NOTIFICATIONS AND ALERTS
+==================================================
+
+Support in-app, push and email notifications through configurable providers.
+
+Alert categories:
+- Upcoming payments and renewals.
+- Free-trial deadlines.
+- Unexpected recurring amounts.
+- Budget limits.
+- Unusual spending.
+- Savings milestones.
+- Suspected fraud.
+- Dangerous links.
+- Security events.
+- Price changes.
+- Monthly summaries.
+- Financial-document reminders.
+
+Include user-defined thresholds, quiet hours, deduplication, escalation policies and notification history.
+
+Avoid alarmist engagement tactics. Do not expose sensitive transaction details in lock-screen previews by default. Essential security warnings must not be silently treated as marketing notifications.
+
+==================================================
+18. FAMILY, HOUSEHOLD AND BUSINESS FEATURES
+==================================================
+
+FAMILY FINANCE:
+- Household workspaces and invitations.
+- Shared expenses, subscriptions and bills.
+- Shared budgets and savings goals.
+- Family-plan comparisons.
+- Roles, permissions and revocation.
+- Activity history.
+
+Private transactions and documents must remain private unless explicitly shared.
+
+SMALL-BUSINESS FINANCE:
+- Software and SaaS inventory.
+- Licence and seat tracking.
+- Renewal calendar.
+- Department budgets.
+- Duplicate-tool discovery.
+- Invoice imports.
+- Vendor comparisons.
+- AI-tool spending.
+- Approval workflows.
+- Renewal reminders.
+- Business reports.
+- Audit history.
+
+ENTERPRISE-READY FOUNDATION:
+- Tenant isolation.
+- Role-based access control.
+- Team permissions.
+- Administrative policies.
+- Audit exports.
+- Configurable retention.
+- Integration monitoring.
+- Organisation-level reporting.
+
+Avoid exposing one customer's information to another tenant or unrestricted support staff.
+
+==================================================
+19. DATABASE AND API DESIGN
+==================================================
+
+Design a normalised PostgreSQL schema with migrations, constraints, suitable indexes, ownership fields, timestamps and foreign keys.
+
+Include entities for:
+Users, profiles, preferences, devices, sessions, consents, accounts, transactions, imports, categories, budgets, goals, assets, debts, subscriptions, plans, prices, recurring payments, mandates, mandate events, documents, fraud submissions, analysis results, threat indicators, threat sources, reviews, product catalogue, comparisons, savings opportunities, savings events, notifications, AI conversations, tool executions, households, memberships, businesses, licences, integrations, support tickets, billing and audit events.
+
+Adapt the model to the implementation rather than creating unnecessary tables.
+
+Requirements:
+- UUIDs and appropriate constraints.
+- Decimal-safe monetary storage.
+- Explicit currency codes.
+- Timezone-aware event timestamps.
+- Idempotency for retryable operations.
+- User and tenant isolation.
+- Separate raw documents from extracted data.
+- Retention and deletion policies.
+- Migration and rollback documentation.
+- Strict database authorisation and row-level security.
+
+Create typed, validated API contracts with pagination, filtering, consistent errors, rate limiting and appropriate versioning.
+
+Never store bank passwords, UPI PINs or OTPs.
+
+==================================================
+20. SECURITY AND PRIVACY ENGINEERING
+==================================================
+
+Apply defence in depth.
+
+Implement:
+- Server-side secret management.
+- Encryption in transit and appropriate encryption at rest.
+- Strong session and token handling.
+- MFA where supported.
+- CSRF, XSS, SQL injection, SSRF and IDOR protections.
+- Rate limiting and abuse prevention.
+- Secure file uploads and malware scanning where appropriate.
+- Input validation and output encoding.
+- Least privilege.
+- Row-level security.
+- Security event logging.
+- Redaction of sensitive information in logs.
+- Secure backups and recovery testing.
+- Dependency and secret scanning.
+- Audit trails.
+- Account and session revocation.
+- Incident response procedures.
+- Data export, deletion and consent withdrawal.
+
+Treat financial records, messages, phone numbers, payment identifiers and documents as sensitive.
+
+Do not sell private financial data or use private messages for advertising. Do not retain private messages for AI training by default. Disclose third-party processing and minimise uploaded content.
+
+Imported messages, documents and web pages are untrusted data. Protect every AI workflow against prompt injection. Content inside a suspicious message must never be allowed to override system policy, grant permissions or trigger tools.
+
+Verify applicable Indian data-protection rules, RBI requirements where relevant, payment-network rules, provider terms and Google Play/Apple policies before shipping affected features. Document which requirements apply and where specialist legal review is necessary.
+
+==================================================
+21. AI/ML SYSTEM DESIGN
+==================================================
+
+Use separate modules for:
+- Transaction categorisation.
+- Merchant matching.
+- Recurring-payment discovery.
+- Subscription identification.
+- Spending anomaly detection.
+- Fraud-message classification.
+- URL risk assessment.
+- OCR/document extraction.
+- Savings-opportunity ranking.
+- Financial question answering.
+- Forecasting and personalisation.
+
+Use deterministic code for financial arithmetic, dates and permission enforcement.
+
+Use source retrieval for changing financial facts. Version models and prompts; log relevant decision metadata without unnecessary raw-content retention.
+
+Create privacy-safe evaluation datasets and evaluate precision, recall, false-positive rates, missed threats, latency and multilingual performance.
+
+Use risk-appropriate thresholds. A low-confidence suspicion should not result in an unsupported public accusation or irreversible action.
+
+Provide model timeouts, fallbacks, cost controls, abuse protections and provider switching through adapters.
+
+==================================================
+22. INTEGRATION ARCHITECTURE
+==================================================
+
+Create independent adapters for:
+- AI model providers.
+- Threat-intelligence and URL reputation.
+- Account-data sources.
+- Mandate information and management.
+- Verified financial-product data.
+- Document processing.
+- Email and push notifications.
+- Platform subscription billing.
+- Analytics and monitoring.
+- Customer support.
+
+Each adapter needs configuration validation, health checks, timeouts, safe retries, rate limits, structured errors, redacted logs and test implementations.
+
+Track states such as unavailable, disconnected, pending authorisation, connected, degraded and error.
+
+Verify current official documentation and real API access before implementation. Never scrape authenticated financial applications or rely on unofficial private APIs.
+
+Where direct integration is impossible, provide manual entry, CSV import, official links, clear instructions or user-authorised sharing instead.
+
+==================================================
+23. ADMINISTRATION AND OPERATIONS
+==================================================
+
+Build a role-restricted administrative portal for:
+- Support tickets.
+- Product catalogue and price verification.
+- Threat-feed health.
+- Threat report and false-positive review.
+- Integration status.
+- Notification templates.
+- Feature flags.
+- Abuse monitoring.
+- User privacy requests.
+- Audit logs.
+- Retention jobs.
+- Billing administration.
+- Application health and error monitoring.
+
+Enforce least privilege. Support operators must not automatically gain access to private financial documents or message contents.
+
+Require audited, authorised access for sensitive operational actions.
+
+Include health endpoints, service monitoring, backup status, error reporting and documented incident-response procedures.
+
+==================================================
+24. MONETISATION
+==================================================
+
+Support configurable plans.
+
+FREE:
+- Manual finance tracking.
+- Basic budgets.
+- Limited subscription tracking.
+- Core payment reminders.
+- Suspicious-message checking.
+- Standard reports.
+
+PREMIUM:
+- Advanced reports and insights.
+- Expanded subscription intelligence.
+- Advanced forecasting.
+- Family finance.
+- Enhanced supported integrations.
+- Additional AI analysis and exports.
+
+BUSINESS:
+- Team workspaces.
+- SaaS and licence inventory.
+- Vendor renewal optimisation.
+- Expense analysis.
+- Approval workflows.
+- Business reports.
+
+FUTURE REVENUE:
+- Clearly disclosed affiliate referrals.
+- B2B licensing.
+- White-label services.
+- Approved provider partnerships.
+- Legitimate assisted-negotiation services.
+
+Implement server-verified entitlements, configurable limits, billing states and cancellation workflows.
+
+Never paywall essential fraud warnings solely to force upgrades. Do not rank products secretly by commission. Do not sell sensitive financial information.
+
+==================================================
+25. ANALYTICS AND PRODUCT INTELLIGENCE
+==================================================
+
+Create privacy-conscious product analytics to measure:
+- Onboarding completion.
+- Activation and retention.
+- Feature adoption.
+- Successful imports.
+- Subscription discovery.
+- Alert usefulness.
+- False-positive reports.
+- Cancellation completion.
+- Verified savings.
+- AI task success and failure.
+- Integration health.
+- Performance and error rates.
+
+Use aggregated data whenever possible. Do not use sensitive transaction details or private messages for behavioural advertising.
+
+Create experiments through feature flags where appropriate. Never optimise engagement at the expense of financial safety, user trust or privacy.
+
+==================================================
+26. QUALITY, RELIABILITY AND TESTING
+==================================================
+
+Create unit, integration, end-to-end, security and accessibility tests.
+
+TEST:
+- Authentication and session expiry.
+- Cross-user and cross-tenant data isolation.
+- Transaction import, duplicates and categorisation.
+- Budget and financial calculations.
+- Currency-safe arithmetic.
+- Subscription renewal dates and annual costs.
+- Recurring-payment forecasts.
+- Cancellation status accuracy.
+- Fraud analysis and legitimate-message handling.
+- Suspicious URL normalisation.
+- Redirect and SSRF defences.
+- Prompt injection in imported content.
+- Threat-source outages and stale data.
+- Consent enforcement.
+- Notification deduplication.
+- Data export and deletion.
+- API authorisation.
+- File validation.
+- Rate limits.
+- Error states and disconnected services.
+- Responsive layouts and accessibility.
+- AI tool authorisation and approval boundaries.
+
+Include synthetic test fixtures, edge cases, timezone handling, leap years, retries and partial failures.
+
+Every test claim must reflect tests actually run. Fix failures when feasible and disclose remaining failures honestly.
+
+==================================================
+27. REQUIRED BUILD PHASES
+==================================================
+
+PHASE 1 — WORKING CORE MVP
+Implement:
+- Design system and responsive web application.
+- Authentication and onboarding.
+- Database schema and migrations.
+- Dashboard and manual transactions.
+- CSV import and export.
+- Budgets, savings goals and calculators.
+- Subscription manager.
+- Recurring-payment and AutoPay tracking.
+- Renewal reminders and cancellation guidance.
+- Basic savings engine.
+- Fraud message checker and safe URL analysis.
+- AI finance assistant with real authorised data.
+- Notifications.
+- Settings, privacy controls and account deletion.
+- Seed data, automated tests and README.
+
+This phase must work without bank linking or privileged SMS access.
+
+PHASE 2 — MOBILE APPLICATIONS
+Implement Android and iOS core workflows, secure storage, app lock, push notifications, supported share-to-scan features and appropriate device integrations.
+
+Verify current OS and app-store restrictions before requesting sensitive permissions.
+
+PHASE 3 — VERIFIED INTEGRATIONS
+Add supported account-data, mandate, payment-provider information, price catalogues and threat-intelligence services as approved and configured.
+
+Require a real successful integration test before marking a provider as connected.
+
+PHASE 4 — ADVANCED PLATFORM
+Add household workspaces, business edition, advanced forecasting, multilingual capabilities, improved fraud analysis, workflow automation, enterprise management and new integrations driven by genuine user needs.
+
+Maintain a backlog for every feature not completed. Do not hide incomplete requirements simply because implementation is phased.
+
+==================================================
+28. REQUIRED DELIVERABLES
+==================================================
+
+Deliver:
+1. Working MVP repository.
+2. Responsive website.
+3. Installable PWA where supported.
+4. Android and iOS project with implemented core workflows appropriate to the environment.
+5. Database migrations and seed scripts.
+6. Environment-variable example file with placeholders only.
+7. API documentation.
+8. Architecture diagram in Mermaid.
+9. Database and security documentation.
+10. Threat model.
+11. Privacy and consent documentation.
+12. Integration setup guides.
+13. Automated test suite and actual results.
+14. Local development instructions.
+15. Deployment instructions.
+16. Production security checklist.
+17. App-store permission checklist.
+18. Feature-completion matrix.
+19. Known limitations and external dependencies.
+20. Prioritised future roadmap.
+
+The README must state exact installation, configuration, database, development, test and deployment commands.
+
+Do not leave core features as empty screens or placeholder TODOs when implementation is feasible. If external services are unavailable, finish all safe components that can be built locally and document precisely what remains.
+
+==================================================
+29. FINAL EXECUTION DIRECTIVE
+==================================================
+
+Begin by inspecting the repository and tools available. Identify the existing framework and preserve useful working code.
+
+Then execute the following loop:
+
+1. Define a concise implementation sequence.
+2. Build the design system and application shell.
+3. Configure authentication, database and access controls.
+4. Implement complete vertical slices across frontend, backend and database.
+5. Add financial calculations and deterministic validation.
+6. Build transaction, subscription and AutoPay functionality.
+7. Implement the fraud-analysis pipeline and safe fallbacks.
+8. Integrate the AI assistant with controlled tools.
+9. Add consent, privacy and security controls.
+10. Run tests, fix failures and check the actual interface.
+11. Document unavailable integrations and required approvals.
+12. Continue to the next highest-priority feature rather than stopping at a prototype.
+
+Work directly in the available development workspace. Use real persistence and meaningful error handling. Verify that major flows actually work.
+
+If the platform cannot support all applications or integrations in one build, deliver the strongest runnable core first and provide a clear, actionable continuation plan without claiming unsupported functionality.
+
+FINAL REPORT
+When you finish, provide:
+- What was implemented.
+- What actually works end-to-end.
+- What remains demo-only or incomplete.
+- Integrations needing credentials, contracts or approvals.
+- Tests executed and actual results.
+- Security limitations.
+- Exact local startup commands.
+- Deployment instructions.
+- The five highest-priority next improvements.
+
+THE FINAL STANDARD:
+MoneyShield OS should feel like a premium financial operating system, not a generic budgeting app. Its key advantage is bringing personal finance intelligence, recurring-payment control, proactive fraud awareness and safe AI-assisted actions into one trustworthy experience.
+
+Build the most useful, polished, secure and genuinely functional version possible within the available environment. Maximise real utility, not the number of screens or unsupported promises.
